@@ -1,14 +1,15 @@
-// App.js
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Animation from './Animation';
 import Scene from './Scene';
-import WordQuiz from './WordQuiz';
 import StoryData from './StoryData';
+import WordQuiz from './WordQuiz'; // Import WordQuiz component
 import './style.css';
 
 function App() {
-  const [currentScene, setCurrentScene] = useState(0);
+  const [showAnimation, setShowAnimation] = useState(true);
+  const [currentScene, setCurrentScene] = useState(null);
   const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
+  const [showQuiz, setShowQuiz] = useState(false); // Add state for WordQuiz
 
   const handleNextSentence = () => {
     const currentSceneData = StoryData[currentScene];
@@ -27,30 +28,37 @@ function App() {
   };
 
   return (
-    <Router basename="/react_proto"> {/* Set the base path here */}
-      <div className="App">
-        <h1>Pizzeria</h1>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Scene
-                  sceneData={StoryData[currentScene]}
-                  currentSentenceIndex={currentSentenceIndex}
-                  handleNextSentence={handleNextSentence}
-                  goToNextScene={goToNextScene}
-                />
-                <Link to="/quiz" className="practice-link">
-                  Harjoittele sanoja - Practice words
-                </Link>
-              </>
-            }
+    <div className="App">
+      <h1>Pizzeria</h1>
+      {showQuiz ? (
+        <WordQuiz />
+      ) : showAnimation ? (
+        <Animation
+          image={process.env.PUBLIC_URL + '/walking.gif'}
+          duration={5000}
+          onAnimationEnd={() => {
+            setShowAnimation(false);
+            setCurrentScene(0); // Start the first scene after the intro animation
+          }}
+        />
+      ) : currentScene !== null ? (
+        <>
+          <Scene
+            sceneData={StoryData[currentScene]}
+            currentSentenceIndex={currentSentenceIndex}
+            handleNextSentence={handleNextSentence}
+            goToNextScene={goToNextScene}
           />
-          <Route path="/quiz" element={<WordQuiz />} />
-        </Routes>
-      </div>
-    </Router>
+          {/* Subtle link */}
+          <button
+            className="practice-link"
+            onClick={() => setShowQuiz(true)} // Show WordQuiz when clicked
+          >
+            Harjoittele sanoja - Practice words
+          </button>
+        </>
+      ) : null}
+    </div>
   );
 }
 

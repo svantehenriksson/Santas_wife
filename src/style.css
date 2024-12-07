@@ -118,6 +118,47 @@ h1 {
   white-space: nowrap;
 }
 
+.animation-container {
+  position: relative;
+  width: 700px;         /* Square dimension for desktop */
+  height: 700px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.animation-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.practice-link {
+  display: inline-block; /* Ensure it behaves like a visible block element */
+  margin: 20px auto; /* Center it with space around */
+  text-align: center; /* Center text */
+  color: #d4a5ff; /* Stylish lilac color */
+  background: none; /* Remove background */
+  text-decoration: underline; /* Make it look like a link */
+  font-size: 1.2em;
+  cursor: pointer;
+  opacity: 0.8; /* Subtle opacity */
+  transition: opacity 0.3s ease;
+  background-color: inherit; /* Use the same background as the parent */
+  border: none;
+  padding: 0; /* Remove button-like padding */
+}
+
+.practice-link:hover {
+  opacity: 1; /* Fully visible on hover */
+}
+
+
+
+
 /* Mobile styles for screens smaller than 768px */
 @media (max-width: 768px) {
   .image-container {
@@ -134,22 +175,11 @@ h1 {
     font-size: 1em;
     padding: 0.8em 2em;
   }
-
+/*
   .practice-link {
-    display: block;
-    margin-top: 20px;
-    font-size: 1em;
-    color: #00d4ff;
-    text-decoration: underline;
-    opacity: 0.8;
-    cursor: pointer;
-    transition: opacity 0.3s;
-  }
-  
-  .practice-link:hover {
-    opacity: 1;
-  }
-
+    font-size: 1em; 
+    margin: 10px auto; 
+*/
   .quiz-container {
     text-align: center;
     background-color: #1a1a2e;

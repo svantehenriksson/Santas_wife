@@ -1,8 +1,10 @@
-// src/StoryData.js
-
 const StoryData = [
   {
-    image: process.env.PUBLIC_URL + "/image1.jpeg", // Uses a relative path based on the public URL
+    animation: {
+    image: process.env.PUBLIC_URL + '/walking.gif',
+    duration: 4000, // Duration in milliseconds
+    },
+    image: process.env.PUBLIC_URL + '/image1.jpeg',
     sentences: [
       { speaker: 'Myyjä', words: [{ fi: 'Moi', en: 'Hi' }] },
       { speaker: 'Sinä', words: [{ fi: 'Moi', en: 'Hi' }] },
@@ -14,21 +16,14 @@ const StoryData = [
     ],
   },
   {
-    image: process.env.PUBLIC_URL + "/image1.jpeg", // Uses a relative path based on the public URL
+    image: process.env.PUBLIC_URL + '/image1.jpeg',
     sentences: [
       { speaker: 'Myyjä', words: [{ fi: 'Mikä', en: 'Which' }, { fi: 'pizza', en: 'pizza' }, { fi: 'haluat?', en: 'would you like?' }] },
     ],
     choices: [
-      { label: 'Kebab-pizza', next: 3 },
-      { label: 'Margherita', next: 3 },
+      { label: 'Kebab-pizza', next: 2 },
+      { label: 'Margherita', next: 2 },
     ],
-  },
-  {
-    image: process.env.PUBLIC_URL + "/image1.jpeg", // Uses a relative path based on the public URL
-    sentences: [
-      { speaker: 'Myyjä', words: [{ fi: 'Hyvä', en: 'Good' }, { fi: 'valinta!', en: 'choice!' }] },
-    ],
-    next: 0, // Return to the first scene for looping purposes
   },
 ];
 
