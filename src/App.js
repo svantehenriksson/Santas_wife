@@ -1,7 +1,8 @@
-// src/App.js
-
+// App.js
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Scene from './Scene';
+import WordQuiz from './WordQuiz';
 import StoryData from './StoryData';
 import './style.css';
 
@@ -26,15 +27,30 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <h1>Pizzeria</h1>
-      <Scene
-        sceneData={StoryData[currentScene]}
-        currentSentenceIndex={currentSentenceIndex}
-        handleNextSentence={handleNextSentence}
-        goToNextScene={goToNextScene}
-      />
-    </div>
+    <Router basename="/react_proto"> {/* Set the base path here */}
+      <div className="App">
+        <h1>Pizzeria</h1>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Scene
+                  sceneData={StoryData[currentScene]}
+                  currentSentenceIndex={currentSentenceIndex}
+                  handleNextSentence={handleNextSentence}
+                  goToNextScene={goToNextScene}
+                />
+                <Link to="/quiz" className="practice-link">
+                  Harjoittele sanoja - Practice words
+                </Link>
+              </>
+            }
+          />
+          <Route path="/quiz" element={<WordQuiz />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

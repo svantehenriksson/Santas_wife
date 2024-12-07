@@ -2,7 +2,7 @@
 
 const StoryData = [
   {
-    image: '/image1.jpeg', // Ensure this file is in the public folder
+    image: process.env.PUBLIC_URL + "/image1.jpeg", // Uses a relative path based on the public URL
     sentences: [
       { speaker: 'Myyjä', words: [{ fi: 'Moi', en: 'Hi' }] },
       { speaker: 'Sinä', words: [{ fi: 'Moi', en: 'Hi' }] },
@@ -14,7 +14,7 @@ const StoryData = [
     ],
   },
   {
-    image: '/image1.jpeg',
+    image: process.env.PUBLIC_URL + "/image1.jpeg", // Uses a relative path based on the public URL
     sentences: [
       { speaker: 'Myyjä', words: [{ fi: 'Mikä', en: 'Which' }, { fi: 'pizza', en: 'pizza' }, { fi: 'haluat?', en: 'would you like?' }] },
     ],
@@ -24,7 +24,7 @@ const StoryData = [
     ],
   },
   {
-    image: '/image1.jpeg',
+    image: process.env.PUBLIC_URL + "/image1.jpeg", // Uses a relative path based on the public URL
     sentences: [
       { speaker: 'Myyjä', words: [{ fi: 'Hyvä', en: 'Good' }, { fi: 'valinta!', en: 'choice!' }] },
     ],
