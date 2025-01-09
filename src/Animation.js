@@ -11,7 +11,7 @@ function Animation({ image, duration, onAnimationEnd }) {
   }, [duration, onAnimationEnd]);
 
   return (
-    <div className="animation-container">
+    <div className="image-container">
       <img src={image} alt="Animation" />
     </div>
   );

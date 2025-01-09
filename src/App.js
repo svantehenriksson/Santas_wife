@@ -9,7 +9,7 @@ function App() {
   const [showAnimation, setShowAnimation] = useState(true);
   const [currentScene, setCurrentScene] = useState(null);
   const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
-  const [showQuiz, setShowQuiz] = useState(false); // Add state for WordQuiz
+  const [showQuiz, setShowQuiz] = useState(false); // State to toggle WordQuiz visibility
 
   const handleNextSentence = () => {
     const currentSceneData = StoryData[currentScene];
@@ -31,11 +31,13 @@ function App() {
     <div className="App">
       <h1>Pizzeria</h1>
       {showQuiz ? (
-        <WordQuiz />
+        <WordQuiz 
+          onBackToStory={() => setShowQuiz(false)} // Pass function to return to story
+        />
       ) : showAnimation ? (
         <Animation
           image={process.env.PUBLIC_URL + '/walking.gif'}
-          duration={5000}
+          duration={7000}
           onAnimationEnd={() => {
             setShowAnimation(false);
             setCurrentScene(0); // Start the first scene after the intro animation
