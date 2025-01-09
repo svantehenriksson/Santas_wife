@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 
 const quizData = [
-  { fi: 'Moi', en: 'Hi', options: ['Hi', 'Bye', 'Thanks'] },
-  { fi: 'Mitä', en: 'What', options: ['What', 'Why', 'When'] },
-  { fi: 'Pizza', en: 'Pizza', options: ['Burger', 'Pizza', 'Pasta'] },
+  { fi: 'Hiiri', en: 'Mouse', options: ['Mouse', 'Cat', 'Dog'] },
+  { fi: 'Pöllö', en: 'Owl', options: ['Crow', 'Owl', 'Swan'] },
+  { fi: 'Kissa', en: 'Cat', options: ['Cat', 'Dog', 'Rabbit'] },
+  { fi: 'Joutsen', en: 'Swan', options: ['Swan', 'Ostrich', 'Eagle'] },
 ];
 
 function WordQuiz({ onBackToStory }) {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; 
 import Animation from './Animation';
 import Scene from './Scene';
 import StoryData from './StoryData';
@@ -29,14 +29,14 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Pizzeria</h1>
+      <h1>Suomen eläimet - Finland's animals</h1>
       {showQuiz ? (
         <WordQuiz 
           onBackToStory={() => setShowQuiz(false)} // Pass function to return to story
         />
       ) : showAnimation ? (
         <Animation
-          image={process.env.PUBLIC_URL + '/walking.gif'}
+          image={process.env.PUBLIC_URL + '/Uncia_uncia.gif'}
           duration={7000}
           onAnimationEnd={() => {
             setShowAnimation(false);
@@ -51,13 +51,15 @@ function App() {
             handleNextSentence={handleNextSentence}
             goToNextScene={goToNextScene}
           />
-          {/* Subtle link */}
-          <button
-            className="practice-link"
-            onClick={() => setShowQuiz(true)} // Show WordQuiz when clicked
-          >
-            Harjoittele sanoja - Practice words
-          </button>
+          <div>
+            {/* Practice words link */}
+            <button
+              className="practice-link"
+              onClick={() => setShowQuiz(true)} // Show WordQuiz when clicked
+            >
+              Harjoittele sanoja - Practice words
+            </button>
+          </div>
         </>
       ) : null}
     </div>
