@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Santas_wife/static/css/main.8eeff3cb.css",
+    "main.js": "/Santas_wife/static/js/main.322722b8.js",
+    "index.html": "/Santas_wife/index.html",
+    "main.8eeff3cb.css.map": "/Santas_wife/static/css/main.8eeff3cb.css.map",
+    "main.322722b8.js.map": "/Santas_wife/static/js/main.322722b8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8eeff3cb.css",
+    "static/js/main.322722b8.js"
+  ]
+}
