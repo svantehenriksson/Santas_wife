@@ -18,27 +18,18 @@ const StoryData = [
     sentences: [
       { speaker: 'Joulupukki', words: [{ fi: 'Minulla', en: 'I have' }, { fi: 'on', en: 'a' }, { fi: 'sinulle', en: 'for you' }, { fi: 'työ.', en: 'job.' }] },
       { speaker: 'Joulupukki', words: [{ fi: 'Vaimoni', en: 'My wife' }, { fi: 'on', en: 'is' }, { fi: 'kadonnut.', en: 'missing.' }] },
-      { speaker: 'Joulupukki', words: [{ fi: 'Hänet', en: 'She' }, { fi: 'nähtiin', en: 'was last seen' }, { fi: 'viimeksi', en: 'last' }, { fi: 'Helsingin', en: 'at Helsinki’s' }, { fi: 'rautatieasemalla.', en: 'railway station.' }] },
+      { speaker: 'Joulupukki', words: [{ fi: 'Huomasin', en: 'I noticed' }, { fi: 'hänellä', en: 'she had' }, { fi: 'kultahippuja', en: 'gold nuggets' }, { fi: 'viime', en: 'last' }, { fi: 'viikolla.', en: 'week.' }] },
+      { speaker: 'Joulupukki', words: [{ fi: 'Hänet', en: 'She' }, { fi: 'nähtiin', en: 'was seen' }, { fi: 'viimeksi', en: 'last' }, { fi: 'Helsingin', en: 'at Helsinki’s' }, { fi: 'rautatieasemalla.', en: 'railway station.' }] },
       { speaker: 'Joulupukki', words: [{ fi: 'Voitko', en: 'Can you' }, { fi: 'etsiä', en: 'find' }, { fi: 'hänet?', en: 'her?' }] },
     ],
     choices: [
-      { label: 'Kyllä', next: 2 },
-      { label: 'Ei', next: 3 },
+      { label: 'Kyllä', next: 3 },
+      { label: 'Ei', next: 2 },
     ],
   },
   
   
-  {
-    image: process.env.PUBLIC_URL + '/mousie.webp',
-    sentences: [
-      { speaker: 'Kysymys', words: [{ fi: 'Mikä', en: 'Which' }, { fi: 'eläin', en: 'animal' }, { fi: 'tämä', en: 'this '}, { fi: 'on?', en: 'is?' }] },
-    ],
-    choices: [
-      { label: 'Hiiri', next: 2 },
-      { label: 'Koira', next: 1 },
-    ],
-  },
-
+  
   {
     image: process.env.PUBLIC_URL + '/gameover.webp',
     sentences: [
@@ -49,7 +40,112 @@ const StoryData = [
     ]
   },
   
+  {
+    image: process.env.PUBLIC_URL + '/railway.webp',
+    sentences: [
+      { speaker: 'Tarina', words: [{ fi: 'Olet', en: 'You are' }, { fi: 'rautatieasemalla.', en: 'at the railway station.' }] },
+      { speaker: 'Tarina', words: [{ fi: 'Mitä', en: 'What' }, { fi: 'teet?', en: 'do you do?' }] },
+    ],
+    choices: [
+      { label: 'Mene R-kioskille', next: 4 },
+      { label: 'Katso roskakoriin', next: 6 },
+    ],
+  },
 
+  {
+    image: process.env.PUBLIC_URL + '/rkioski.webp',
+    sentences: [
+      { speaker: 'Myyjä', words: [{ fi: 'Moi', en: 'Hi' }] },
+      { speaker: 'Myyjä', words: [{ fi: 'Mitä', en: 'What' }, { fi: 'saisi', en: 'would you like' }, { fi: 'olla?', en: 'to have?' }] },
+    ],
+    choices: [
+      { label: 'Tupakkaa, kiitos', next: '2' },
+      { label: 'Oletko nähnyt joulupukin vaimoa?', next: '5' },
+    ],
+  },
+
+  {
+    image: process.env.PUBLIC_URL + '/rkioski.webp',
+    sentences: [
+      { speaker: 'Myyjä', words: [{ fi: 'Näin', en: 'I saw' }, { fi: 'hänet', en: 'her' }, { fi: 'roskakorin', en: 'the trash bin' }, { fi: 'luona.', en: 'by it.' }] },
+    ],
+    choices: [
+      { label: 'Mene roskakorille', next: 6 },
+    ],
+  },
+
+  {
+    image: process.env.PUBLIC_URL + '/bin.webp',
+    sentences: [
+      { speaker: 'Tarina', words: [{ fi: 'Roskakorissa', en: 'In the trash bin' }, { fi: 'on', en: 'is' }, { fi: 'joulupukin', en: 'Santa\'s' }, { fi: 'vaimon', en: 'wife\'s' }, { fi: 'lakki.', en: 'hat.' }] },
+      { speaker: 'Tarina', words: [{ fi: 'Huomaat', en: 'You notice' }, { fi: 'vanhan', en: 'an old' }, { fi: 'kartan.', en: 'map.' }] },
+    ],
+    choices: [
+      { label: 'Lue kartta', next: 7 },
+      { label: 'Mene R-kioskille', next: 4 },
+    ],
+  },
+  
+  {
+    image: process.env.PUBLIC_URL + '/bin2.webp',
+    sentences: [
+      { speaker: 'Tarina', words: [{ fi: 'Vanha', en: 'The old' }, { fi: 'kartta', en: 'map' }, { fi: 'kuvaa', en: 'depicts' }, { fi: 'Haltin', en: 'the Halti' }, { fi: 'aluetta.', en: 'area.' }] },
+      { speaker: 'Tarina', words: [{ fi: 'Halti', en: 'Halti' }, { fi: 'on', en: 'is' }, { fi: 'Suomen', en: 'Finland\'s' }, { fi: 'korkein', en: 'highest' }, { fi: 'vuori.', en: 'mountain.' }] },
+    ],
+    choices: [
+      { label: 'Osta junalippu', next: 8 },
+      { label: 'Mene R-kioskille', next: 4 },
+    ],
+  },
+
+  {
+    image: process.env.PUBLIC_URL + '/train.webp',
+    sentences: [
+      { speaker: 'Tarina', words: [{ fi: 'Matkustat', en: 'You are traveling' }, { fi: 'yöjunalla', en: 'on a night train' }, { fi: 'Rovaniemelle.', en: 'to Rovaniemi.' }] },
+      { speaker: 'Tarina', words: [{ fi: 'Viski', en: 'Whiskey' }, { fi: 'auttaa', en: 'helps' }, { fi: 'sinua', en: 'you' }, { fi: 'ajattelemaan.', en: 'think.' }] },
+      { speaker: 'Tarina', words: [{ fi: 'Mistä', en: 'What' }, { fi: 'joulupukki', en: 'Santa Claus' }, { fi: 'puhui?', en: 'talk about?' }] },
+    ],
+    choices: [
+      { label: 'Poroista', next: 2 },
+      { label: 'Kullasta', next: 9 },
+    ],
+  },
+  
+  {
+    image: process.env.PUBLIC_URL + '/train2.webp',
+    sentences: [
+      { speaker: 'Tarina', words: [{ fi: 'Muistat', en: 'You remember' }, { fi: 'kultakaivoksen.', en: 'a gold mine.' }] },
+      { speaker: 'Tarina', words: [{ fi: 'Haltin', en: 'Halti,' }, { fi: 'pohjoispuolella', en: 'north side' }, { fi: 'on', en: 'is' }, { fi: 'tarujen', en: 'legend' }, { fi: 'mukaan', en: 'according' }, { fi: 'pieni', en: 'small' }, { fi: 'hylätty', en: 'abandoned' }, { fi: 'kultakaivos.', en: 'gold mine.' }] },
+      { speaker: 'Tarina', words: [{ fi: 'Joulupukin', en: 'Santa Claus\'s' }, { fi: 'vaimon', en: 'wife\'s' }, { fi: 'kartta', en: 'map' }, { fi: 'näyttää', en: 'shows' }, { fi: 'varmasti', en: 'surely' }, { fi: 'kultakaivoksen', en: 'the gold mine.' }] },
+    ],
+    choices: [
+      { label: 'Mene hyttiin nukkumaan', next: 10 },
+    ],
+  },
+  
+  {
+    image: process.env.PUBLIC_URL + '/bus.webp',
+    sentences: [
+      { speaker: 'Tarina', words: [{ fi: 'Matka', en: 'The journey' }, { fi: 'Rovaniemeltä', en: 'from Rovaniemi' }, { fi: 'Haltille', en: 'to Halti' }, { fi: 'jatkuu', en: 'continues' }, { fi: 'bussilla.', en: 'by bus.' }] },
+    ],
+    choices: [
+      { label: '→', next: 11 },
+    ],
+  },
+  
+  {
+    image: process.env.PUBLIC_URL + '/halti.webp',
+    sentences: [
+      { speaker: 'Tarina', words: [{ fi: 'Jatkuu.', en: 'To be continued.' }] },
+      { speaker: 'Tarina', words: [{ fi: 'Odota', en: 'Wait for' }, { fi: 'tarinan', en: 'the story\'s' }, { fi: 'jatkon', en: 'continuation' }, { fi: 'ilmestymistä.', en: 'to come out.' }] },
+      { speaker: 'Tarina', words: [{ fi: 'Liity', en: 'Join' }, { fi: 'Fluenzon', en: 'Fluenzo\'s' }, { fi: 'sähköpostilistalle!', en: 'mailing list!' }] },
+    ],
+    choices: [
+      { label: 'Ok', next: 11 },
+    ],
+  },
+  
+  
   {
     image: process.env.PUBLIC_URL + '/mousie.webp',
     sentences: [
