@@ -29,15 +29,15 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Suomen eläimet - Finland's animals</h1>
+      <h1>Joulupukin vaimo - Santa's wife</h1>
       {showQuiz ? (
         <WordQuiz 
           onBackToStory={() => setShowQuiz(false)} // Pass function to return to story
         />
       ) : showAnimation ? (
         <Animation
-          image={process.env.PUBLIC_URL + '/Uncia_uncia.gif'}
-          duration={7000}
+          image={process.env.PUBLIC_URL + '/intro.webp'}
+          duration={5000}
           onAnimationEnd={() => {
             setShowAnimation(false);
             setCurrentScene(0); // Start the first scene after the intro animation
