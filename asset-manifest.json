@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Santas_wife/static/css/main.8eeff3cb.css",
-    "main.js": "/Santas_wife/static/js/main.84fba792.js",
+    "main.js": "/Santas_wife/static/js/main.cd353921.js",
     "index.html": "/Santas_wife/index.html",
     "main.8eeff3cb.css.map": "/Santas_wife/static/css/main.8eeff3cb.css.map",
-    "main.84fba792.js.map": "/Santas_wife/static/js/main.84fba792.js.map"
+    "main.cd353921.js.map": "/Santas_wife/static/js/main.cd353921.js.map"
   },
   "entrypoints": [
     "static/css/main.8eeff3cb.css",
-    "static/js/main.84fba792.js"
+    "static/js/main.cd353921.js"
   ]
 }
